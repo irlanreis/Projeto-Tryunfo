@@ -27,7 +27,7 @@ class Card extends Component {
 
         {
           cardTrunfo === true
-            ? <section data-testid="trunfo-card">Super Trybe Trunfo</section> : null
+            ? <section data-testid="trunfo-card">Super Trunfo</section> : null
         }
       </div>
     );

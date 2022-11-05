@@ -121,13 +121,13 @@ class Form extends Component {
         <div>
           <label htmlFor="cardTrunfo">
             {/* Este campo será usado para inserir se a carta é o Super Trunfo. */}
-            Super  Trybe Trunfo
+            Super Trybe Trunfo
             <input
               checked={ cardTrunfo }
               onChange={ onInputChange }
               type="checkbox"
               name="cardTrunfo"
-              id="super-trunfo"
+              id="cardTrunfo"
               data-testid="trunfo-input"
             />
           </label>
