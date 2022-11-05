@@ -20,7 +20,7 @@ class Form extends Component {
               onChange={ onInputChange }
               type="text"
               data-testid="name-input"
-              id="cardName"
+              name="cardName"
             />
           </label>
         </div>
@@ -40,14 +40,14 @@ class Form extends Component {
         </div>
 
         <div>
-          <label htmlFor="cardAttr-1">
+          <label htmlFor="cardAttr1">
             {/* Este campo será usado para inserir o primeiro atributo da carta. Ele é livre para você adicionar o atributo que mais combinar com o seu baralho. */}
             Atributo-1
             <input
               value={ cardAttr1 }
               onChange={ onInputChange }
               type="number"
-              name="cardAttr-1"
+              name="cardAttr1"
               id="cardAttr-1"
               data-testid="attr1-input"
             />
@@ -55,14 +55,14 @@ class Form extends Component {
         </div>
 
         <div>
-          <label htmlFor="cardAttr-2">
+          <label htmlFor="cardAttr2">
             {/* Este campo será usado para inserir o segundo atributo da carta. */}
             Atributo-2
             <input
               value={ cardAttr2 }
               onChange={ onInputChange }
               type="number"
-              name="cardAttr-2"
+              name="cardAttr2"
               id="cardAttr-2"
               data-testid="attr2-input"
             />
@@ -70,14 +70,14 @@ class Form extends Component {
         </div>
 
         <div>
-          <label htmlFor="cardAttr-3">
+          <label htmlFor="cardAttr3">
             {/* Este campo será usado para inserir o terceiro atributo da carta */}
             Atributo-3
             <input
               value={ cardAttr3 }
               onChange={ onInputChange }
               type="number"
-              name="cardAttr-3"
+              name="cardAttr3"
               id="cardAttr-3"
               data-testid="attr3-input"
             />
@@ -100,14 +100,14 @@ class Form extends Component {
         </div>
 
         <div>
-          <label htmlFor="select-rare">
+          <label htmlFor="cardRare">
             {/* Este campo será usado para inserir a raridade da carta */}
             Selecione a Raridade
             <select
               value={ cardRare }
               onChange={ onInputChange }
-              name="select-rare"
-              id="select-rare"
+              name="cardRare"
+              id="cardRare"
               data-testid="rare-input"
             >
               {/* <option value="selecione">{ ' ' }</option> */}
@@ -119,14 +119,14 @@ class Form extends Component {
         </div>
 
         <div>
-          <label htmlFor="super-trunfo">
+          <label htmlFor="cardTrunfo">
             {/* Este campo será usado para inserir se a carta é o Super Trunfo. */}
-            Super Trunfo
+            Super  Trybe Trunfo
             <input
               checked={ cardTrunfo }
               onChange={ onInputChange }
               type="checkbox"
-              name="super-trunfo"
+              name="cardTrunfo"
               id="super-trunfo"
               data-testid="trunfo-input"
             />
@@ -150,8 +150,8 @@ class Form extends Component {
 }
 
 Form.defaultProps = {
-  cardName: 'name-card',
-  cardDescription: 'description-card',
+  cardName: '',
+  cardDescription: '',
   cardAttr1: 0,
   cardAttr2: 0,
   cardAttr3: 0,

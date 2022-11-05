@@ -27,7 +27,7 @@ class Card extends Component {
 
         {
           cardTrunfo === true
-            ? <section data-testid="trunfo-card">Super Trunfo</section> : null
+            ? <section data-testid="trunfo-card">Super Trybe Trunfo</section> : null
         }
       </div>
     );
@@ -35,8 +35,8 @@ class Card extends Component {
 }
 
 Card.defaultProps = {
-  cardName: 'name-card',
-  cardDescription: 'description-card',
+  cardName: '',
+  cardDescription: '',
   cardAttr1: 0,
   cardAttr2: 0,
   cardAttr3: 0,
