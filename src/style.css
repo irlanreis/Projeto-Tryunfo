@@ -1,23 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .container-form {
-  background: linear-gradient(to right, lightgreen, lightblue, lightyellow);
+  background: linear-gradient(to right, #90ee90, #add8e6, #ffffe0);
   border: 2px solid black;
+  border-radius: 2%;
   display: flex;
   flex-direction: column;
   line-height: 30px;
   margin: 10px;
+  padding: 5px;
   width: 280px;
 }
 
 .container-card {
   background: linear-gradient(to left, #0cf164, #2a77dd, #05ddcb);
   border: 2px solid black;
+  border-radius: 2%;
   display: flex;
   flex-direction: column;
   line-height: 30px;
   margin: 10px;
+  padding: 5px;
   width: 280px;
 }
 
-body {
-  display: flex;
-}

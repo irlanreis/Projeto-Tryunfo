@@ -6,8 +6,8 @@ import './style.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     // this.onInputChange = this.onInputChange.bind(this);
-    // this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     // this.test = this.test.bind(this);
     this.state = {
       cardName: '',
@@ -16,10 +16,10 @@ class App extends React.Component {
       cardAttr2: '0',
       cardAttr3: '0',
       cardImage: '',
-      cardRare: '',
+      cardRare: 'normal',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
-      // testButton: [],
+      // saveInputs: [],
     };
   }
 
@@ -68,6 +68,22 @@ class App extends React.Component {
     });
   };
 
+  onSaveButtonClick = (event) => {
+    event.preventDefault();
+
+    this.setState({
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: 'normal',
+      cardTrunfo: false,
+      isSaveButtonDisabled: true,
+    });
+  };
+
   render() {
     const { cardName, cardImage, cardDescription } = this.state;
     const { cardAttr1, cardAttr2, cardAttr3 } = this.state;
@@ -85,7 +101,7 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
           onInputChange={ this.onInputChange }
-          // onSaveButtonClick={ this.onSaveButtonClick }
+          onSaveButtonClick={ this.onSaveButtonClick }
           isSaveButtonDisabled={ isSaveButtonDisabled }
         />
 
