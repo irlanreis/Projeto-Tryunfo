@@ -1,9 +1,10 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
+
 .container-form {
-  background: linear-gradient(to right, #90ee90, #add8e6, #ffffe0);
+  background: linear-gradient(to right, lightgreen, lightblue, lightyellow);
   border: 2px solid black;
   border-radius: 2%;
   display: flex;
