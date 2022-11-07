@@ -3,14 +3,24 @@ import PropTypes from 'prop-types';
 
 class Form extends Component {
   render() {
-    const { cardName, cardDescription } = this.props;
-    const { cardAttr1, cardAttr2, cardAttr3 } = this.props;
-    const { cardImage, cardRare, cardTrunfo } = this.props;
-    const { isSaveButtonDisabled } = this.props;
-    const { onInputChange, onSaveButtonClick } = this.props;
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+      isSaveButtonDisabled,
+      onInputChange,
+      onSaveButtonClick,
+      // hasTrunfo,
+      // getFormData
+    } = this.props;
 
     return (
-      <form>
+      <form className="container-form">
         <div>
           <label htmlFor="cardName">
             {/* Este campo será usado para inserir o nome da carta */}
@@ -44,6 +54,8 @@ class Form extends Component {
             {/* Este campo será usado para inserir o primeiro atributo da carta. Ele é livre para você adicionar o atributo que mais combinar com o seu baralho. */}
             Atributo-1
             <input
+              min={ 0 }
+              max={ 90 }
               value={ cardAttr1 }
               onChange={ onInputChange }
               type="number"
@@ -59,6 +71,8 @@ class Form extends Component {
             {/* Este campo será usado para inserir o segundo atributo da carta. */}
             Atributo-2
             <input
+              min={ 0 }
+              max={ 90 }
               value={ cardAttr2 }
               onChange={ onInputChange }
               type="number"
@@ -74,6 +88,8 @@ class Form extends Component {
             {/* Este campo será usado para inserir o terceiro atributo da carta */}
             Atributo-3
             <input
+              min={ 0 }
+              max={ 90 }
               value={ cardAttr3 }
               onChange={ onInputChange }
               type="number"
@@ -85,15 +101,15 @@ class Form extends Component {
         </div>
 
         <div>
-          <label htmlFor="image">
+          <label htmlFor="cardImage">
             {/* Este campo será usado para inserir o caminho para imagem da carta. */}
             imagem
             <input
               value={ cardImage }
               onChange={ onInputChange }
               type="text"
-              name="image"
-              id="image"
+              name="cardImage"
+              id="cardImage"
               data-testid="image-input"
             />
           </label>
@@ -135,6 +151,7 @@ class Form extends Component {
 
         <div>
           <button
+            name="button"
             onClick={ onSaveButtonClick }
             disabled={ isSaveButtonDisabled }
             type="submit"
@@ -149,32 +166,20 @@ class Form extends Component {
   }
 }
 
-Form.defaultProps = {
-  cardName: '',
-  cardDescription: '',
-  cardAttr1: 0,
-  cardAttr2: 0,
-  cardAttr3: 0,
-  cardImage: '',
-  cardRare: '',
-  cardTrunfo: false,
-  isSaveButtonDisabled: false,
-  onInputChange: () => {},
-  onSaveButtonClick: () => {},
-};
-
 Form.propTypes = {
-  cardName: PropTypes.string,
-  cardDescription: PropTypes.string,
-  cardAttr1: PropTypes.number,
-  cardAttr2: PropTypes.number,
-  cardAttr3: PropTypes.number,
-  cardImage: PropTypes.string,
-  cardRare: PropTypes.string,
-  cardTrunfo: PropTypes.bool,
-  isSaveButtonDisabled: PropTypes.bool,
-  onSaveButtonClick: PropTypes.func,
-  onInputChange: PropTypes.func,
+  cardName: PropTypes.string.isRequired,
+  cardDescription: PropTypes.string.isRequired,
+  cardAttr1: PropTypes.string.isRequired,
+  cardAttr2: PropTypes.string.isRequired,
+  cardAttr3: PropTypes.string.isRequired,
+  cardImage: PropTypes.string.isRequired,
+  cardRare: PropTypes.string.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
+  isSaveButtonDisabled: PropTypes.bool.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onSaveButtonClick: PropTypes.func.isRequired,
+  // hasTrunfo: PropTypes.bool.isRequired,
+  // getFormData: PropTypes.func.isRequired,
 };
 
 export default Form;

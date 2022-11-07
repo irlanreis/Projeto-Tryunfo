@@ -3,11 +3,19 @@ import PropTypes from 'prop-types';
 
 class Card extends Component {
   render() {
-    const { cardName, cardDescription } = this.props;
-    const { cardAttr1, cardAttr2, cardAttr3 } = this.props;
-    const { cardImage, cardRare, cardTrunfo } = this.props;
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    } = this.props;
+
     return (
-      <div>
+      <div className="container-card">
         <h1>Card</h1>
         <p data-testid="name-card">{ cardName }</p>
 
@@ -34,26 +42,14 @@ class Card extends Component {
   }
 }
 
-Card.defaultProps = {
-  cardName: '',
-  cardDescription: '',
-  cardAttr1: 0,
-  cardAttr2: 0,
-  cardAttr3: 0,
-  cardImage: '',
-  cardRare: '',
-  cardTrunfo: false,
-};
-
 Card.propTypes = {
-  cardName: PropTypes.string,
-  cardDescription: PropTypes.string,
-  cardAttr1: PropTypes.number,
-  cardAttr2: PropTypes.number,
-  cardAttr3: PropTypes.number,
-  cardImage: PropTypes.string,
-  cardRare: PropTypes.string,
-  cardTrunfo: PropTypes.bool,
+  cardName: PropTypes.string.isRequired,
+  cardDescription: PropTypes.string.isRequired,
+  cardAttr1: PropTypes.string.isRequired,
+  cardAttr3: PropTypes.string.isRequired,
+  cardAttr2: PropTypes.string.isRequired,
+  cardImage: PropTypes.string.isRequired,
+  cardRare: PropTypes.string.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
 };
-
 export default Card;

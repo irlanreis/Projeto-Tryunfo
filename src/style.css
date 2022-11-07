@@ -1,0 +1,23 @@
+.container-form {
+  line-height: 30px;
+  background: linear-gradient(to right, lightgreen, lightblue, lightyellow);
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 280px
+}
+
+.container-card {
+  background: linear-gradient(to left, rgb(12, 241, 100), rgb(42, 119, 221), rgb(5, 221, 203));
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  margin: 10px;
+  width: 280px;
+}
+
+body {
+  display: flex;
+}
