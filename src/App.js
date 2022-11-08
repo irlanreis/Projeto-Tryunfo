@@ -22,6 +22,7 @@ class App extends React.Component {
       hasTrunfo: false,
       saveInputs: [],
       nameFilter: '',
+      rarityFilter: 'todas',
     };
   }
 
@@ -125,11 +126,12 @@ class App extends React.Component {
     const { cardName, cardImage, cardDescription } = this.state;
     const { cardAttr1, cardAttr2, cardAttr3, hasTrunfo } = this.state;
     const { cardTrunfo, cardRare, isSaveButtonDisabled } = this.state;
-    const { saveInputs, nameFilter } = this.state;
+    const { saveInputs, nameFilter, rarityFilter } = this.state;
 
-    const filteredArray = nameFilter ? saveInputs
+    let filteredArray = nameFilter ? saveInputs
       .filter((card) => card.cardName.includes(nameFilter)) : saveInputs;
-
+    filteredArray = rarityFilter !== 'todas' ? filteredArray
+      .filter((card) => card.cardRare === rarityFilter) : filteredArray;
     return (
       <div>
         <Form
@@ -166,6 +168,19 @@ class App extends React.Component {
             type="text"
             data-testid="name-filter"
           />
+
+          <select
+            onChange={ this.filterCards }
+            name="rarityFilter"
+            value={ rarityFilter }
+            type="text"
+            data-testid="rare-filter"
+          >
+            <option value="todas">Todas</option>
+            <option value="normal">Normal</option>
+            <option value="raro">Raro</option>
+            <option value="muito raro">Muito Raro</option>
+          </select>
 
           {
             filteredArray.map((newCard, index) => (
