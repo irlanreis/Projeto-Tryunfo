@@ -101,6 +101,17 @@ class App extends React.Component {
     }));
   };
 
+  deleteCard = (index) => {
+    const { saveInputs } = this.state;
+    const newArray = saveInputs;
+    newArray.splice(index, 1);
+
+    this.setState({
+      saveInputs: newArray,
+      hasTrunfo: newArray.some((card) => card.cardTrunfo),
+    });
+  };
+
   render() {
     const { cardName, cardImage, cardDescription } = this.state;
     const { cardAttr1, cardAttr2, cardAttr3, hasTrunfo } = this.state;
@@ -138,10 +149,18 @@ class App extends React.Component {
         <section>
           {
             saveInputs.map((newCard, index) => (
-              <Card
-                key={ index }
-                { ...newCard }
-              />
+              <section key={ index }>
+                <Card
+                  { ...newCard }
+                />
+                <button
+                  type="button"
+                  data-testid="delete-button"
+                  onClick={ () => this.deleteCard(index) }
+                >
+                  Excluir
+                </button>
+              </section>
             ))
           }
         </section>
