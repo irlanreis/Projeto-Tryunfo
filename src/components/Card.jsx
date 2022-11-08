@@ -16,8 +16,7 @@ class Card extends Component {
 
     return (
       <div className="container-card">
-        <h1>Card</h1>
-        <p data-testid="name-card">{ cardName }</p>
+        <h1 data-testid="name-card">{ cardName }</h1>
 
         <img
           src={ cardImage }

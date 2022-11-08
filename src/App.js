@@ -105,6 +105,7 @@ class App extends React.Component {
     const { cardName, cardImage, cardDescription } = this.state;
     const { cardAttr1, cardAttr2, cardAttr3, hasTrunfo } = this.state;
     const { cardTrunfo, cardRare, isSaveButtonDisabled } = this.state;
+    const { saveInputs } = this.state;
 
     return (
       <div>
@@ -133,6 +134,17 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+
+        <section>
+          {
+            saveInputs.map((newCard, index) => (
+              <Card
+                key={ index }
+                { ...newCard }
+              />
+            ))
+          }
+        </section>
       </div>
     );
   }
