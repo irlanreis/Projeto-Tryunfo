@@ -21,6 +21,7 @@ class App extends React.Component {
       isSaveButtonDisabled: true,
       hasTrunfo: false,
       saveInputs: [],
+      nameFilter: '',
     };
   }
 
@@ -112,11 +113,22 @@ class App extends React.Component {
     });
   };
 
+  filterCards = ({ target }) => {
+    const { name, value } = target;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
   render() {
     const { cardName, cardImage, cardDescription } = this.state;
     const { cardAttr1, cardAttr2, cardAttr3, hasTrunfo } = this.state;
     const { cardTrunfo, cardRare, isSaveButtonDisabled } = this.state;
-    const { saveInputs } = this.state;
+    const { saveInputs, nameFilter } = this.state;
+
+    const filteredArray = nameFilter ? saveInputs
+      .filter((card) => card.cardName.includes(nameFilter)) : saveInputs;
 
     return (
       <div>
@@ -147,8 +159,16 @@ class App extends React.Component {
         />
 
         <section>
+          <input
+            onChange={ this.filterCards }
+            name="nameFilter"
+            value={ nameFilter }
+            type="text"
+            data-testid="name-filter"
+          />
+
           {
-            saveInputs.map((newCard, index) => (
+            filteredArray.map((newCard, index) => (
               <section key={ index }>
                 <Card
                   { ...newCard }
