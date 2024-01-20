@@ -133,35 +133,39 @@ class App extends React.Component {
     filteredArray = rarityFilter !== 'todas' ? filteredArray
       .filter((card) => card.cardRare === rarityFilter) : filteredArray;
     return (
-      <div>
-        <Form
-          cardName={ cardName }
-          cardImage={ cardImage }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          onInputChange={ this.onInputChange }
-          onSaveButtonClick={ this.onSaveButtonClick }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          hasTrunfo={ hasTrunfo }
-        />
+      <div className="main">
+        <div className="main-second">
+          <Form
+            cardName={ cardName }
+            cardImage={ cardImage }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+            onInputChange={ this.onInputChange }
+            onSaveButtonClick={ this.onSaveButtonClick }
+            isSaveButtonDisabled={ isSaveButtonDisabled }
+            hasTrunfo={ hasTrunfo }
+          />
 
-        <Card
-          cardDescription={ cardDescription }
-          cardImage={ cardImage }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardName={ cardName }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-        />
+          <Card
+            cardDescription={ cardDescription }
+            cardImage={ cardImage }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardName={ cardName }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+          />
+        </div>
 
-        <section>
+        <section className="filtered-img">
           <input
+            className="input-search"
+            placeholder="Buscar..."
             onChange={ this.filterCards }
             name="nameFilter"
             value={ nameFilter }
@@ -170,6 +174,7 @@ class App extends React.Component {
           />
 
           <select
+            className="textarea"
             onChange={ this.filterCards }
             name="rarityFilter"
             value={ rarityFilter }
@@ -181,24 +186,28 @@ class App extends React.Component {
             <option value="raro">Raro</option>
             <option value="muito raro">Muito Raro</option>
           </select>
-
-          {
-            filteredArray.map((newCard, index) => (
-              <section key={ index }>
-                <Card
-                  { ...newCard }
-                />
-                <button
-                  type="button"
-                  data-testid="delete-button"
-                  onClick={ () => this.deleteCard(index) }
-                >
-                  Excluir
-                </button>
-              </section>
-            ))
-          }
         </section>
+        <div className="container-newCard">
+          <div className="new-card">
+            {
+              filteredArray.map((newCard, index) => (
+                <section key={ index } className="card">
+                  <Card
+                    { ...newCard }
+                  />
+                  <button
+                    className="button-delete"
+                    type="button"
+                    data-testid="delete-button"
+                    onClick={ () => this.deleteCard(index) }
+                  >
+                    Excluir
+                  </button>
+                </section>
+              ))
+            }
+          </div>
+        </div>
       </div>
     );
   }

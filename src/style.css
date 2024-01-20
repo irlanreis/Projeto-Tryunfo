@@ -3,9 +3,32 @@
   padding: 0;
 }
 
+body {
+  background: linear-gradient(to right, rgba(233, 16, 16, 0), #161515, black)
+}
+
+.filtered-img {
+  background-color: #E0EEEE;
+  border: solid 2px #5F9EA0;
+  border-radius: 10px;
+  display: flex;
+  height: 32px;
+  width: 50%;
+}
+
+.input-search {
+  background: #edf6f7;
+  border: none;
+  border-radius: 10px;
+  float: left;
+  font-size: 18px;
+  font-weight: 700;
+  height: 32px;
+  width: 90%;
+}
+
 .container-form {
   background: linear-gradient(to right, lightgreen, lightblue, lightyellow);
-  border: 2px solid black;
   border-radius: 2%;
   display: flex;
   flex-direction: column;
@@ -24,6 +47,70 @@
   line-height: 30px;
   margin: 10px;
   padding: 5px;
-  width: 280px;
+  position: relative;
+  max-width: 280px;
+  min-width: 280px;
+  max-height: 500px;
+  text-align: center;
 }
 
+.button-main {
+  -moz-border-radius: 14px;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -webkit-border-radius: 14px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  background: -webkit-linear-gradient(top, #44bf13, #10968d);
+  background: (linear, left top, left bottom, from(#44bf13), to(#10968d));
+  background: #10968d;
+  border-radius: 14px;
+  border-top: 1px solid #2076ab;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  color: #ebebeb;
+  cursor: pointer;
+  font-family:Sans-Serif;
+  font-size: 16px;
+  padding: 7.5px 15px;
+  text-decoration: none;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  vertical-align:super;
+}
+.button-main:hover {
+  border-top-color: #21cf21;
+  background: #21cf21;
+  color: #d9d9d9;
+  font-weight: 600;
+  transform: scale(0.9);
+}
+
+.button-main:active {
+  background: #2c6e4b;
+  border-top-color: #2c6e4b;
+}
+
+.button-delete {
+  font-weight: 600;
+  font-size: larger;
+  border-radius: 20px;
+  cursor: pointer;
+  position: absolute;
+  background: linear-gradient(to right, red, rgb(214, 21, 21));
+  width: 100px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.new-card {
+  display: flex;
+  position: relative;
+}
+
+
+.main {
+  border: #21cf21 solid;
+}
+
+.main-second {
+  border: tomato solid;
+  display: flex;
+  justify-content: space-around;
+}
